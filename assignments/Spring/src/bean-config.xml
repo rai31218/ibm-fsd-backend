@@ -1,0 +1,50 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Bean instantiation with default constructor -->
+	<!-- bean definition -->
+	
+	<!--  <bean id="greetings" class="com.example.spring.core.Greetings" > 
+		<property name="message" value="Message from config file" />
+	</bean> -->
+	
+	 <bean id="beanfactgreetings" class="com.example.spring.core.Greetings" >  
+		<property name="message" value="Message from config file using bean factory" />
+	</bean>  
+	
+	<bean id="greeting" class="com.example.spring.core.Greetings" > 
+	<constructor-arg name="num" value="9"></constructor-arg>
+	<constructor-arg name="msg" value="Message from config file"></constructor-arg>
+		<!-- <property name="message" value="Message from config file" /> -->
+	</bean>
+	
+	<bean id="employee" class="com.example.spring.core.Employee">
+	<property name="dob"  ref="localdates"></property>
+	<property name="designation" value="ASE"></property>
+	<property name="salary" value="30000"></property>
+	<property name="skill">
+	<list>
+				<value>Front-End</value>
+				<value>Back-End</value>			
+     </list>
+     </property>
+     <property name="fulltime" value="True"></property>
+     <constructor-arg name="id" value="1"></constructor-arg>
+	 <constructor-arg name="name" value="Ruddy"></constructor-arg>
+	 <constructor-arg name="address" ref="address"></constructor-arg>
+	</bean>
+	
+	<bean id="address" class="com.example.spring.core.Address">
+	<property name="city" value="Kolkata"></property>
+	<property name="country" value="India"></property>
+	<property name="pin" value="700078"></property>
+	</bean>
+	
+	<bean id="localdates" class="java.time.LocalDate" factory-method="parse">
+	<constructor-arg index="0"  value="1995-10-27" /> <!--or name="text" as parse method 
+	take the arg with name "text" -->
+	</bean>
+	
+</beans>
