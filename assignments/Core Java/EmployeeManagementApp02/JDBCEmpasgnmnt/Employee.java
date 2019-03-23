@@ -1,4 +1,4 @@
-package com.JDBCEmpasgnmnt;
+package com.employee.management;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
