@@ -1,0 +1,13 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd">
+   
+   <bean id="employee" class=" com.employee.management.Employee" ></bean>
+   
+   <bean id="employeedao" class="com.employee.management.EmployeeDao" autowire="constructor"></bean>
+   
+   <bean id="employeeserve" class="com.employee.management.EmployeeServe" autowire="constructor"></bean>
+   
+   <bean id="valid" class="com.employee.management.Valid"></bean>
+ </beans>
