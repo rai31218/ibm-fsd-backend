@@ -1,0 +1,61 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  
+  <listener>
+		<listener-class>com.servlet.listener.ApplicationListener</listener-class>
+</listener>
+
+<listener>
+		<listener-class>com.servlet.listener.SessionListener</listener-class>
+</listener>
+
+   <filter>
+  <filter-name>Filtering2</filter-name>
+  <filter-class>com.servlet.filter.Filtering2</filter-class>
+  </filter>
+  
+  <filter-mapping>
+  <filter-name>Filtering2</filter-name>
+  <url-pattern>/*</url-pattern>
+
+  </filter-mapping>
+  
+  <filter>
+  <filter-name>Filtering</filter-name>
+  <filter-class>com.servlet.filter.Filtering</filter-class>
+  </filter>
+  
+  <filter-mapping>
+  <filter-name>Filtering</filter-name>
+  <url-pattern>/*</url-pattern>
+  </filter-mapping> 
+ 
+ <servlet>
+		<servlet-name>GreetingServlet</servlet-name>
+		<servlet-class>com.servlet.GreetingServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GreetingServlet</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+ 
+ 
+ <servlet>
+		<servlet-name>GreetingServlets</servlet-name>
+		<servlet-class>com.servlet.hello.world.HelloWorld</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GreetingServlets</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+  
+ 
+  
+  
+</web-app>
